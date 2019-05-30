@@ -1,3 +1,4 @@
+
 {% load static from staticfiles %}
 
 <!DOCTYPE html>
@@ -32,7 +33,7 @@
 <body>
 	
 
-	<div class="container-contact100">
+	<!-- <div class="container-contact100">
 
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form">
@@ -72,11 +73,12 @@
 		</div>
 	</div>
 
-
-
+	
+ -->
 
 
 	<div id="dropDownSelect1"></div>
+ 	
 
 <!--===============================================================================================-->
 	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
@@ -105,5 +107,9 @@
   gtag('config', 'UA-23581568-13');
 </script>
 {% block form %}{% endblock %}
+<div class="graph">
+	{% block graph %}{% endblock %}
+</div>
+<span class="footer"></span>
 </body>
 </html>

@@ -129,26 +129,39 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Contact ]*/
 
+
 .container-contact100 {
+  grid-template-areas: "title"
+                       "input"
+                       "nupp"
+                       "vastused"
+                       "graph" !important;
+  grid-template-rows: 300px 10px 100px 40px 600px !important;
+  grid-template-columns: 600px;
   width: 100%;  
-  min-height: 100vh;
+/*  min-height: 100vh;*/
+
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
+  /*display: flex;
+  flex-wrap: wrap;*/
+  flex-direction: columns;
+ 
   justify-content: center;
   align-items: center;
   padding: 15px;
-  position: relative;
+ /* position: relative;*/
   background-color: #f2f2f2;
 }
 
 .wrap-contact100 {
+
+  /*grid-auto-flow: column;*/
   width: 550px;
   background: transparent;
-  padding: 50px 0px 160px 0px;
+  /*padding: 50px 0px 160px 0px;*/
 }
 
 
@@ -157,11 +170,13 @@ iframe {
 
 .contact100-form {
   width: 100%;
+  justify-content: center;
 }
 
 .contact100-form-title {
-  display: flex;
+  grid-area: title;
   justify-content: center;
+  align-items: start;
   display: block;
   font-family: Ubuntu-Bold;
   font-size: 30px;
@@ -169,23 +184,35 @@ iframe {
   line-height: 1.2;
   text-transform: uppercase;
   text-align: center;
+  padding-top: 100px;
   padding-bottom: 49px;
+  background-color: #f2f2f2;
+}
+
+.contact100-form-title p {
+  padding-top: 0px;
+  font-size: 20px;
+  text-transform: none;
+  height: 400vh;
 }
 
 /*------------------------------------------------------------------
 [ Input ]*/
 
 .wrap-input100, #id_polynom {
-  width: 100%;
+  width: 50%;
+
   background-color: #fff;
   border-radius: 31px;
   margin-bottom: 16px;
-  position: relative;
+  /*position: relative;*/
   z-index: 1;
+  
 }
 
 .input100, #id_polynom {
-  position: relative;
+  grid-area: input;
+  /*position: relative;*/
   display: block;
   width: 100%;
   background: #fff;
@@ -205,6 +232,7 @@ input.input100, #id_polynom {
 
 
 textarea.input100, #id_polynom {
+  grid-area: input;
   min-height: 70px;
   padding: 19px 35px 0 35px;
 }
@@ -246,11 +274,14 @@ textarea.input100, #id_polynom {
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
-  display: flex;
+  grid-area: nupp;
+  background-color: #f2f2f2;
+ /* display: flex;*/
   flex-wrap: wrap;
   justify-content: center;
 
   padding-top: 10px;
+  padding-bottom: 40px;
 }
 
 .contact100-form-btn {
@@ -310,7 +341,9 @@ textarea.input100, #id_polynom {
   width: calc(100% + 20px);
 }
 
-
+.graph {
+  grid-area: graph;
+}
 
 
 /*------------------------------------------------------------------
@@ -355,7 +388,7 @@ textarea.input100, #id_polynom {
 
 .alert-validate::after {
   content: "\f06a";
-  font-family: FontAwesome;
+  /*font-family: FontAwesome;*/
   display: block;
   position: absolute;
   z-index: 1100;
@@ -381,3 +414,4 @@ textarea.input100, #id_polynom {
     opacity: 1;
   }
 }
+

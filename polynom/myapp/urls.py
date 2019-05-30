@@ -6,4 +6,5 @@ from . import views
 urlpatterns = [
     
     url(r'^', views.polynom ),
+    url('graph/', views.graph ),
 ]
